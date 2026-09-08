@@ -1,7 +1,0 @@
-[Unit]
-Description=SayLotto PostgreSQL backup
-After=postgresql.service
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/saylotto-backup
