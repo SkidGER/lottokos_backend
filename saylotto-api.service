@@ -1,0 +1,21 @@
+[Unit]
+Description=SayLotto API
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=saylotto
+Group=saylotto
+WorkingDirectory=/opt/saylotto-backend
+EnvironmentFile=/opt/saylotto-backend/.env
+ExecStart=/usr/bin/node /opt/saylotto-backend/src/server.js
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/saylotto-backend
+
+[Install]
+WantedBy=multi-user.target
